@@ -1,0 +1,38 @@
+# Maven
+target/
+.classpath
+.project
+.settings/
+*.class
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+.directory
+
+# Build outputs
+*.jar
+*.war
+*.ear
+*.zip
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Project specific
+build/
+dist/
+.gradle/
