@@ -1,0 +1,81 @@
+# ========================================
+# BLOCKS SHOP
+# Các khối xây dựng
+# ========================================
+
+netherite_block:
+  material: NETHERITE_BLOCK
+  name: "&4Netherite Block"
+  lore:
+    - "&7The strongest material"
+    - "&7Extremely valuable"
+    - "&eCost: 1000 Points"
+  price: 1000.0
+  currency: "custom"
+  amount: 1
+
+diamond_block:
+  material: DIAMOND_BLOCK
+  name: "&bDiamond Block"
+  lore:
+    - "&7A luxury block"
+    - "&7For decoration"
+    - "&eCost: $800"
+  price: 800.0
+  currency: "vault"
+  amount: 1
+
+gold_block:
+  material: GOLD_BLOCK
+  name: "&6Gold Block"
+  lore:
+    - "&7Shiny decoration"
+    - "&7Valuable material"
+    - "&eCost: $300"
+  price: 300.0
+  currency: "vault"
+  amount: 1
+
+iron_block:
+  material: IRON_BLOCK
+  name: "&7Iron Block"
+  lore:
+    - "&7Strong material"
+    - "&7Storage block"
+    - "&eCost: $200"
+  price: 200.0
+  currency: "vault"
+  amount: 1
+
+emerald_block:
+  material: EMERALD_BLOCK
+  name: "&2Emerald Block"
+  lore:
+    - "&7Precious material"
+    - "&7For decoration"
+    - "&eCost: $400"
+  price: 400.0
+  currency: "vault"
+  amount: 1
+
+obsidian:
+  material: OBSIDIAN
+  name: "&4Obsidian"
+  lore:
+    - "&7Unbreakable block"
+    - "&7Portal material"
+    - "&eCost: $150"
+  price: 150.0
+  currency: "vault"
+  amount: 1
+
+bedrock:
+  material: BEDROCK
+  name: "&8Bedrock"
+  lore:
+    - "&7The legendary block"
+    - "&7Cannot be broken"
+    - "&eCost: 2000 Points"
+  price: 2000.0
+  currency: "custom"
+  amount: 1

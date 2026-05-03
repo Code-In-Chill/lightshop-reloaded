@@ -1,0 +1,81 @@
+# ========================================
+# MATERIALS SHOP
+# Các vật liệu quý giá
+# ========================================
+
+diamond:
+  material: DIAMOND
+  name: "&bDiamond"
+  lore:
+    - "&7A precious gem"
+    - "&7Used for crafting"
+    - "&eCost: $100"
+  price: 100.0
+  currency: "vault"
+  amount: 1
+
+emerald:
+  material: EMERALD
+  name: "&2Emerald"
+  lore:
+    - "&7A trading gem"
+    - "&7Used by villagers"
+    - "&eCost: $80"
+  price: 80.0
+  currency: "vault"
+  amount: 1
+
+gold_ingot:
+  material: GOLD_INGOT
+  name: "&6Gold Ingot"
+  lore:
+    - "&7Shiny and valuable"
+    - "&7Used in crafting"
+    - "&eCost: 50 Points"
+  price: 50.0
+  currency: "custom"
+  amount: 1
+
+iron_ingot:
+  material: IRON_INGOT
+  name: "&7Iron Ingot"
+  lore:
+    - "&7Strong and durable"
+    - "&7Basic crafting material"
+    - "&eCost: $40"
+  price: 40.0
+  currency: "vault"
+  amount: 1
+
+copper_ingot:
+  material: COPPER_INGOT
+  name: "&cCopper Ingot"
+  lore:
+    - "&7Conductive metal"
+    - "&7Lightning rod material"
+    - "&eCost: $35"
+  price: 35.0
+  currency: "vault"
+  amount: 1
+
+lapis_lazuli:
+  material: LAPIS_LAZULI
+  name: "&9Lapis Lazuli"
+  lore:
+    - "&7Blue pigment source"
+    - "&7Used for enchanting"
+    - "&eCost: $60"
+  price: 60.0
+  currency: "vault"
+  amount: 1
+
+coal:
+  material: COAL
+  name: "&8Coal"
+  lore:
+    - "&7Fuel source"
+    - "&7Essential for smelting"
+    - "&eCost: $20"
+  price: 20.0
+  currency: "vault"
+  amount: 1

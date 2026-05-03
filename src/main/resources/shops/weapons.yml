@@ -1,0 +1,72 @@
+# ========================================
+# WEAPONS SHOP
+# Vũ khí và công cụ chiến đấu
+# ========================================
+
+enchanted_diamond_sword:
+  material: DIAMOND_SWORD
+  name: "&3Enchanted Sword"
+  lore:
+    - "&7A powerful weapon"
+    - "&7Enchantments:"
+    - "&7  - Sharpness II"
+    - "&7  - Knockback I"
+    - "&eCost: $500"
+  price: 500.0
+  currency: "vault"
+  amount: 1
+
+iron_sword:
+  material: IRON_SWORD
+  name: "&7Iron Sword"
+  lore:
+    - "&7Reliable weapon"
+    - "&7Good for combat"
+    - "&eCost: $150"
+  price: 150.0
+  currency: "vault"
+  amount: 1
+
+netherite_sword:
+  material: NETHERITE_SWORD
+  name: "&4Netherite Sword"
+  lore:
+    - "&7Strongest weapon"
+    - "&7Unbreakable potential"
+    - "&eCost: 800 Points"
+  price: 800.0
+  currency: "custom"
+  amount: 1
+
+bow:
+  material: BOW
+  name: "&6Golden Bow"
+  lore:
+    - "&7Ranged weapon"
+    - "&7Shoot enemies from afar"
+    - "&eCost: $200"
+  price: 200.0
+  currency: "vault"
+  amount: 1
+
+crossbow:
+  material: CROSSBOW
+  name: "&cCrossbow"
+  lore:
+    - "&7Advanced ranged weapon"
+    - "&7Higher damage than bow"
+    - "&eCost: $300"
+  price: 300.0
+  currency: "vault"
+  amount: 1
+
+diamond_pickaxe:
+  material: DIAMOND_PICKAXE
+  name: "&bDiamond Pickaxe"
+  lore:
+    - "&7Mining tool"
+    - "&7Mine diamonds easily"
+    - "&eCost: $400"
+  price: 400.0
+  currency: "vault"
+  amount: 1
