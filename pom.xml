@@ -28,14 +28,19 @@
 
         <!-- Vault Repository -->
         <repository>
-            <id>vault-repo</id>
-            <url>http://nexus.hc.to/content/repositories/pub_releases</url>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
         </repository>
 
         <!-- PlaceholderAPI Repository -->
         <repository>
             <id>placeholderapi</id>
-            <url>https://repo.extendedclip.com/contents/placeholderapi/</url>
+            <url>https://repo.helpch.at/releases</url>
+        </repository>
+
+        <repository>
+            <id>enginehub-maven</id>
+            <url>https://maven.enginehub.org/repo/</url>
         </repository>
     </repositories>
 
@@ -50,9 +55,9 @@
 
         <!-- Vault Economy API -->
         <dependency>
-            <groupId>net.milkbowl.vault</groupId>
+            <groupId>com.github.MilkBowl</groupId>
             <artifactId>VaultAPI</artifactId>
-            <version>1.7</version>
+            <version>1.7.1</version>
             <scope>provided</scope>
         </dependency>
 
@@ -60,7 +65,7 @@
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
-            <version>2.11.3</version>
+            <version>2.11.6</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
