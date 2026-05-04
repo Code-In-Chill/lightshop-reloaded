@@ -98,12 +98,13 @@ public class LightShop extends JavaPlugin {
         // Load main config
         reloadConfig();
 
-        // Load shop config (legacy support)
+        // Load shop config (legacy support - only if file exists)
         File shopConfigFile = new File(getDataFolder(), "shop.yml");
-        if (!shopConfigFile.exists()) {
-            saveResource("shop.yml", false);
+        if (shopConfigFile.exists()) {
+            shopConfig = YamlConfiguration.loadConfiguration(shopConfigFile);
+        } else {
+            shopConfig = null;
         }
-        shopConfig = YamlConfiguration.loadConfiguration(shopConfigFile);
 
         // Create shops directory if doesn't exist
         createShopsDirectory();
