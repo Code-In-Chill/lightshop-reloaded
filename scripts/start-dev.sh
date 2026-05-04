@@ -11,6 +11,7 @@ echo "Preparing plugins folder..."
 mkdir -p docker/plugins
 rm -f docker/plugins/LightShop-*.jar
 cp target/LightShop-*.jar docker/plugins/
+rm -f docker/plugins/*-obfuscated.jar
 
 echo "Starting Paper server..."
 docker compose -f docker/dev-docker-compose.yml up -d
