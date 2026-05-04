@@ -7,7 +7,7 @@
 
     <groupId>com.lightshop</groupId>
     <artifactId>LightShop</artifactId>
-    <version>1.2.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>LightShop</name>
