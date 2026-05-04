@@ -1,0 +1,92 @@
+# LightShop Configuration
+# A high-performance shop plugin with Folia support
+
+# ========================================
+# SHOP STRUCTURE
+# ========================================
+# Place your shop files in the 'shops/' folder
+# Each .yml file in shops/ folder becomes a shop category
+# Example:
+#   - shops/materials.yml (Materials Shop)
+#   - shops/weapons.yml   (Weapons Shop)
+#   - shops/armor.yml     (Armor Shop)
+#   - shops/food.yml      (Food Shop)
+# Plugin will auto-load all .yml files from shops/ folder
+
+# Economy Settings
+economy:
+  # Use Vault economy (requires Vault plugin)
+  use-vault: true
+  
+  # Custom Economy Configuration
+  custom-eco:
+    # Enable custom economy system (requires PlaceholderAPI for balance checking)
+    enabled: true
+    
+    # PlaceholderAPI placeholder to check player balance
+    # Common examples:
+    # - %playerpoints_points% (PlayerPoints)
+    # - %playervaults_balance% (PlayerVaults)
+    balance-placeholder: "%playerpoints_points%"
+    
+    # Command to deduct money from player
+    # %player% will be replaced with player name
+    # %amount% will be replaced with amount to deduct
+    take-command: "points take %player% %amount%"
+    
+    # Command to add money to player
+    # %player% will be replaced with player name
+    # %amount% will be replaced with amount to add
+    give-command: "points give %player% %amount%"
+
+# Shop UI Settings
+shop:
+  # GUI title when opening the shop
+  title: "&e&lLightShop"
+  
+  # Number of rows in the shop GUI (1-6)
+  rows: 3
+  
+  # Fill empty slots with glass panes (true/false)
+  fill-empty: false
+  
+  # Glass pane material (if fill-empty is true)
+  glass-material: "GRAY_STAINED_GLASS_PANE"
+
+# Message Settings
+messages:
+  # Messages use & for color codes
+  prefix: "&e[LightShop]&r "
+  
+  no-permission: "&cBạn không có quyền sử dụng lệnh này!"
+  
+  no-money: "&cBạn không đủ tiền! Cần: %price%, Bạn có: %balance%"
+  
+  buy-success: "&aBạn đã mua %item% thành công với giá %price%!"
+  
+  buy-fail: "&cKhông thể mua %item%, vui lòng thử lại!"
+  
+  inventory-full: "&cHành trang của bạn đầy, không thể nhận vật phẩm!"
+  
+  config-reloaded: "&aLightShop config đã được tải lại thành công!"
+  
+  config-reload-fail: "&cCó lỗi khi tải lại config: %error%"
+  
+  economy-unavailable: "&cHệ thống kinh tế không khả dụng!"
+  
+  shop-help: |
+    &e&l=== LightShop Help ===
+    &7/lightshop &f- Mở cửa hàng
+    &7/shophelp &f- Hiển thị trợ giúp
+    &7(Admin) /lightshop reload &f- Tải lại config
+
+# Folia Scheduler Settings
+scheduler:
+  # Use async scheduler for non-player-specific tasks
+  use-async: true
+  
+  # Time to wait before closing GUI after purchase (in ticks)
+  gui-close-delay: 5
+
+# Debug Mode
+debug: false
