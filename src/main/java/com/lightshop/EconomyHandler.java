@@ -68,8 +68,9 @@ public class EconomyHandler {
             return false;
         }
 
+        String balanceString = "";
         try {
-            String balanceString = PlaceholderAPI.setPlaceholders(player, balancePlaceholder);
+            balanceString = PlaceholderAPI.setPlaceholders(player, balancePlaceholder);
             double balance = Double.parseDouble(balanceString);
             return balance >= amount;
         } catch (NumberFormatException e) {
@@ -109,8 +110,9 @@ public class EconomyHandler {
             return 0.0;
         }
 
+        String balanceString = "";
         try {
-            String balanceString = PlaceholderAPI.setPlaceholders(player, balancePlaceholder);
+            balanceString = PlaceholderAPI.setPlaceholders(player, balancePlaceholder);
             return Double.parseDouble(balanceString);
         } catch (NumberFormatException e) {
             plugin.getLogger().log(Level.WARNING, "Failed to parse balance: " + balanceString, e);
