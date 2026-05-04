@@ -2,7 +2,8 @@ name: LightShop
 version: 1.2.0
 description: A high-performance shop plugin with full Folia support and dual economy system
 main: com.lightshop.LightShop
-api-version: 1.20
+api-version: '1.21'
+folia-supported: true
 
 authors:
   - HarariMc

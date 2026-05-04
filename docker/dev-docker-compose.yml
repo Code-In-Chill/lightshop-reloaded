@@ -5,10 +5,13 @@ services:
     container_name: lightshop-mc
     environment:
       EULA: 'TRUE'
-      TYPE: 'PAPER'
-      VERSION: '1.20.1'
+      TYPE: 'FOLIA'
+      VERSION: '1.21.11'
       ONLINE_MODE: 'false'
       MEMORY: '2G'
+      REMOTE_PLUGINS: |
+        https://github.com/MilkBowl/Vault/releases/download/1.7.3/Vault.jar
+        https://github.com/EssentialsX/Essentials/releases/download/2.20.1/EssentialsX-2.20.1.jar
     ports:
       - '25565:25565'
     volumes:
