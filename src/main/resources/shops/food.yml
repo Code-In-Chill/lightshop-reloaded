@@ -1,0 +1,81 @@
+# ========================================
+# FOOD SHOP
+# Thức ăn và những thứ có thể ăn
+# ========================================
+
+golden_apple:
+  material: GOLDEN_APPLE
+  name: "&6Golden Apple"
+  lore:
+    - "&7Magical food item"
+    - "&7Grants special effects"
+    - "&eCost: $250"
+  price: 250.0
+  currency: "vault"
+  amount: 1
+
+enchanted_golden_apple:
+  material: ENCHANTED_GOLDEN_APPLE
+  name: "&eEnchanted Golden Apple"
+  lore:
+    - "&7Legendary food"
+    - "&7Extreme healing power"
+    - "&eCost: 500 Points"
+  price: 500.0
+  currency: "custom"
+  amount: 1
+
+cooked_beef:
+  material: COOKED_BEEF
+  name: "&6Cooked Beef"
+  lore:
+    - "&7Filling food"
+    - "&7Restores hunger"
+    - "&eCost: $25"
+  price: 25.0
+  currency: "vault"
+  amount: 1
+
+cooked_chicken:
+  material: COOKED_CHICKEN
+  name: "&cCooked Chicken"
+  lore:
+    - "&7Tasty food"
+    - "&7Light meal"
+    - "&eCost: $15"
+  price: 15.0
+  currency: "vault"
+  amount: 1
+
+cake:
+  material: CAKE
+  name: "&6Cake"
+  lore:
+    - "&7Sweet dessert"
+    - "&7Restores saturation"
+    - "&eCost: $50"
+  price: 50.0
+  currency: "vault"
+  amount: 1
+
+pumpkin_pie:
+  material: PUMPKIN_PIE
+  name: "&6Pumpkin Pie"
+  lore:
+    - "&7Seasonal treat"
+    - "&7Restores hunger"
+    - "&eCost: $30"
+  price: 30.0
+  currency: "vault"
+  amount: 1
+
+potion_healing:
+  material: POTION
+  name: "&5Healing Potion"
+  lore:
+    - "&7Magical potion"
+    - "&7Restores health"
+    - "&eCost: $80"
+  price: 80.0
+  currency: "vault"
+  amount: 1

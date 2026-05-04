@@ -1,0 +1,81 @@
+# ========================================
+# ARMOR SHOP
+# Giáp và áo bảo vệ
+# ========================================
+
+diamond_helmet:
+  material: DIAMOND_HELMET
+  name: "&bDiamond Helmet"
+  lore:
+    - "&7Protective headgear"
+    - "&7Maximum durability"
+    - "&eCost: $350"
+  price: 350.0
+  currency: "vault"
+  amount: 1
+
+diamond_chestplate:
+  material: DIAMOND_CHESTPLATE
+  name: "&bDiamond Chestplate"
+  lore:
+    - "&7Protective body armor"
+    - "&7Maximum durability"
+    - "&eCost: $450"
+  price: 450.0
+  currency: "vault"
+  amount: 1
+
+diamond_leggings:
+  material: DIAMOND_LEGGINGS
+  name: "&bDiamond Leggings"
+  lore:
+    - "&7Protective leg armor"
+    - "&7Maximum durability"
+    - "&eCost: $350"
+  price: 350.0
+  currency: "vault"
+  amount: 1
+
+diamond_boots:
+  material: DIAMOND_BOOTS
+  name: "&bDiamond Boots"
+  lore:
+    - "&7Protective footwear"
+    - "&7Maximum durability"
+    - "&eCost: $300"
+  price: 300.0
+  currency: "vault"
+  amount: 1
+
+netherite_helmet:
+  material: NETHERITE_HELMET
+  name: "&4Netherite Helmet"
+  lore:
+    - "&7Maximum protection"
+    - "&7Fire resistant"
+    - "&eCost: 600 Points"
+  price: 600.0
+  currency: "custom"
+  amount: 1
+
+iron_helmet:
+  material: IRON_HELMET
+  name: "&7Iron Helmet"
+  lore:
+    - "&7Basic protection"
+    - "&7Good durability"
+    - "&eCost: $100"
+  price: 100.0
+  currency: "vault"
+  amount: 1
+
+shield:
+  material: SHIELD
+  name: "&7Wooden Shield"
+  lore:
+    - "&7Defensive equipment"
+    - "&7Block incoming damage"
+    - "&eCost: $120"
+  price: 120.0
+  currency: "vault"
+  amount: 1

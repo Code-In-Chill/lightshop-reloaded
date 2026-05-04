@@ -1,0 +1,42 @@
+name: LightShop
+version: 1.2.0
+description: A high-performance shop plugin with full Folia support and dual economy system
+main: com.lightshop.LightShop
+api-version: 1.20
+
+authors:
+  - HarariMc
+
+depend:
+  - Vault
+
+softdepend:
+  - PlaceholderAPI
+  - FoliaLib
+
+commands:
+  shop:
+    description: Open the LightShop menu
+    aliases:
+      - lightshop
+      - ls
+    usage: /shop
+  
+  shophelp:
+    description: Show LightShop help information
+    aliases:
+      - shopinfo
+    usage: /shophelp
+
+permissions:
+  lightshop.use:
+    description: Allow player to use the shop
+    default: true
+  
+  lightshop.admin:
+    description: Allow player to reload shop configurations
+    default: op
+  
+  lightshop.admin.economy:
+    description: Admin permission for economy commands
+    default: op
