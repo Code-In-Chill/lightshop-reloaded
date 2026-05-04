@@ -1,6 +1,7 @@
 package com.lightshop;
 
 import org.bukkit.Bukkit;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -28,37 +29,37 @@ public class LightShop extends JavaPlugin {
 
         // Save default config if it doesn't exist
         saveDefaultConfig();
-        
+
         try {
             // Load configurations
             loadConfigurations();
-            
+
             // Setup Vault economy
             if (getConfig().getBoolean("economy.use-vault")) {
                 if (!setupVaultEconomy()) {
                     getLogger().log(Level.WARNING, "Vault not found, Vault economy disabled!");
                 }
             }
-            
+
             // Initialize economy handler
             economyHandler = new EconomyHandler(this);
             getLogger().info("Economy system initialized");
-            
+
             // Initialize shop GUI
             shopGUI = new ShopGUI(this);
             transactionGUI = new TransactionGUI(this);
             getLogger().info("Shop GUI system initialized");
-            
+
             // Register event listener
             getServer().getPluginManager().registerEvents(
                     new ShopEventListener(this), this
             );
-            
+
             // Register commands
             getCommand("shop").setExecutor(new ShopCommand(this));
             getCommand("shophelp").setExecutor(new ShopHelpCommand(this));
-            
-            org.bukkit.command.ConsoleCommandSender console = Bukkit.getConsoleSender();
+
+            ConsoleCommandSender console = Bukkit.getConsoleSender();
             console.sendMessage("§e  _     _       _     _   _____ _                 ");
             console.sendMessage("§e | |   (_)     | |   | | /  ___| |                ");
             console.sendMessage("§e | |    _  __ _| |__ | |_\\ `--.| |__   ___  _ __  ");
@@ -68,13 +69,17 @@ public class LightShop extends JavaPlugin {
             console.sendMessage("§e           __/ |                           | |    ");
             console.sendMessage("§e          |___/                            |_|    ");
             console.sendMessage("");
+            console.sendMessage("§e §6Reloaded Version");
+            console.sendMessage("");
             console.sendMessage("§8==================================================");
             console.sendMessage("§8| §fPlugin: §eLightShop v" + getDescription().getVersion());
             console.sendMessage("§8| §fAuthor: §bHarariMc");
             console.sendMessage("§8| §fPlatform: §d" + (isFoliaServer() ? "Folia" : "Paper/Spigot"));
             console.sendMessage("§8| §fStatus: §a✔ SUCCESSFULLY LOADED");
             console.sendMessage("§8==================================================");
-            
+
+            // Print community version log
+            printCommunityVersionLog(console);
         } catch (Exception e) {
             getLogger().log(Level.SEVERE, "Failed to enable LightShop", e);
             getServer().getPluginManager().disablePlugin(this);
@@ -92,20 +97,20 @@ public class LightShop extends JavaPlugin {
     private void loadConfigurations() throws Exception {
         // Load main config
         reloadConfig();
-        
+
         // Load shop config (legacy support)
         File shopConfigFile = new File(getDataFolder(), "shop.yml");
         if (!shopConfigFile.exists()) {
             saveResource("shop.yml", false);
         }
         shopConfig = YamlConfiguration.loadConfiguration(shopConfigFile);
-        
+
         // Create shops directory if doesn't exist
         createShopsDirectory();
-        
+
         getLogger().info("Configurations loaded successfully");
     }
-    
+
     /**
      * Create default shops directory with example files
      */
@@ -114,7 +119,7 @@ public class LightShop extends JavaPlugin {
         if (!shopsDir.exists()) {
             shopsDir.mkdirs();
             getLogger().info("Created shops directory");
-            
+
             // Save default shop files
             try {
                 saveDefaultShopFile("shops/materials.yml");
@@ -128,7 +133,7 @@ public class LightShop extends JavaPlugin {
             }
         }
     }
-    
+
     /**
      * Save a shop file from resources
      */
@@ -144,13 +149,13 @@ public class LightShop extends JavaPlugin {
      */
     private boolean setupVaultEconomy() {
         try {
-            RegisteredServiceProvider<Economy> rsp = 
+            RegisteredServiceProvider<Economy> rsp =
                     getServer().getServicesManager().getRegistration(Economy.class);
-            
+
             if (rsp == null) {
                 return false;
             }
-            
+
             vaultEconomy = rsp.getProvider();
             return vaultEconomy != null;
         } catch (Exception e) {
@@ -221,5 +226,25 @@ public class LightShop extends JavaPlugin {
         if (getConfig().getBoolean("economy.use-vault")) {
             setupVaultEconomy();
         }
+    }
+
+    /**
+     * Print community version information
+     */
+    private void printCommunityVersionLog(ConsoleCommandSender console) {
+        String [] lines = {
+            "Community version made by leminhbao308",
+            "https://github.com/Code-In-Chill/lightshop-reloaded/releases"
+        };
+        int maxLen = 0;
+        for(String l : lines) {
+            maxLen = Math.max(maxLen, l.length());
+        String border = "§8+" + "=".repeat(maxLen + 4) + "+";
+        console.sendMessage(border);
+        for(String l : lines) {
+            int pad = maxLen - l.length();
+            console.sendMessage("§8| §7" + l + " ".repeat(pad) + "§8 |");
+        }
+        console.sendMessage(border);
     }
 }
