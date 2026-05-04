@@ -147,7 +147,7 @@
                         }</option>
                     </options>
                     <libs>
-                        <lib>/home/dev/.jdks/ms-21.0.10/jmods/java.base.jmod</lib>
+                        <lib>${java.home}/jmods/java.base.jmod</lib>
                     </libs>
                 </configuration>
             </plugin>

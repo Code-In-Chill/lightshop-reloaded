@@ -5,6 +5,7 @@ ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT_DIR"
 
 echo "Building LightShop plugin..."
+export JAVA_HOME=/home/dev/.jdks/ms-21.0.10
 mvn -B -DskipTests clean package
 
 echo "Preparing plugins folder..."
