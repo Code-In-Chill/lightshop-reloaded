@@ -5,8 +5,8 @@ services:
     container_name: lightshop-mc
     environment:
       EULA: 'TRUE'
-      TYPE: 'PAPER'
-      VERSION: '1.20.1'
+      TYPE: 'FOLIA'
+      VERSION: '1.21.11'
       ONLINE_MODE: 'false'
       MEMORY: '2G'
     ports:
