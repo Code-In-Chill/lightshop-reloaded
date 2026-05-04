@@ -231,17 +231,18 @@ public class LightShop extends JavaPlugin {
     /**
      * Print community version information
      */
-    private void printCommunityVersionLog(ConsoleCommandSender console) {
-        String [] lines = {
+    private void printCommunityVersionLog(org.bukkit.command.ConsoleCommandSender console) {
+        String[] lines = {
             "Community version made by leminhbao308",
             "https://github.com/Code-In-Chill/lightshop-reloaded/releases"
         };
         int maxLen = 0;
-        for(String l : lines) {
+        for (String l : lines) {
             maxLen = Math.max(maxLen, l.length());
+        }
         String border = "§8+" + "=".repeat(maxLen + 4) + "+";
         console.sendMessage(border);
-        for(String l : lines) {
+        for (String l : lines) {
             int pad = maxLen - l.length();
             console.sendMessage("§8| §7" + l + " ".repeat(pad) + "§8 |");
         }

@@ -36,3 +36,56 @@ Thumbs.db
 build/
 dist/
 .gradle/
+
+
+# Common working directory
+run/
+
+# Local editor settings
+.vscode/
+
+# JAR files (trừ docker/plugins/)
+*.jar
+
+# Docker - Plugin configs (sinh ra khi chạy server)
+# Docker - Plugin configs (sinh ra khi chạy server)
+docker/plugins/**/*.yml
+docker/plugins/**/*.yaml
+docker/plugins/**/*.json
+docker/plugins/**/*.db
+docker/plugins/**/*.sqlite
+docker/plugins/**/*.backup
+docker/plugins/**/*.log
+docker/plugins/bStats/
+docker/plugins/puns-payment/
+docker/plugins/spark/tmp/
+docker/plugins/spark/tmp-client/
+
+# Các file metadata đi kèm jar
+docker/plugins/**/*.sha1
+docker/plugins/**/*.slimjar_meta
+docker/plugins/**/slimjar.owner
+docker/plugins/.paper-remapped/
+docker/plugins/**/*.properties
+docker/plugins/**/*.mv.db
+docker/plugins/**/*.bin
+docker/plugins/**/*.txt
+docker/plugins/**/*.so
+docker/plugins/**/*.jfr
+docker/plugins/**/*.tmp
+docker/plugins/**/*.so.tmp
+docker/plugins/**/*.jfr.tmp
+
+# LuckPerms translations
+docker/plugins/LuckPerms/translations/
+
+# Essentials userdata
+docker/plugins/Essentials/userdata/
+docker/plugins/Essentials/warps/
+docker/plugins/Essentials/messages/
+
+# Ngoại lệ: giữ lại .gitkeep trong docker/plugins/
+!docker/plugins/.gitkeep
+
+# Misc
+cp.txt
