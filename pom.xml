@@ -127,6 +127,8 @@
                         <option>-dontwarn org.bukkit.**</option>
                         <option>-dontwarn net.milkbowl.vault.**</option>
                         <option>-dontwarn me.clip.placeholderapi.**</option>
+                        <option>-dontwarn io.papermc.paper.**</option>
+                        <option>-dontwarn java.util.logging.**</option>
                         
                         <!-- Keep main plugin class -->
                         <option>-keep public class com.lightshop.LightShop {
