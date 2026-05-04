@@ -230,23 +230,10 @@ public class ShopEventListener implements Listener {
      */
     private void scheduleFoliaTask(Player player, Runnable task) {
         try {
-            // Get the RegionizedServer instance
-            Object regionizedServer = Bukkit.getServer().getClass()
-                    .getMethod("getRegionizedServer")
-                    .invoke(Bukkit.getServer());
-
-            // Get the EntityScheduler for the player
-            Object entityScheduler = regionizedServer.getClass()
-                    .getMethod("getEntityScheduler", org.bukkit.entity.Entity.class)
-                    .invoke(regionizedServer, player);
-
-            // Execute the task
-            entityScheduler.getClass()
-                    .getMethod("execute", Runnable.class, Runnable.class, long.class)
-                    .invoke(entityScheduler, plugin, task, 0L);
-        } catch (Exception e) {
-            // Fallback to sync scheduler
-            plugin.getLogger().log(Level.FINE, "Folia scheduler not available, using sync scheduler", e);
+            // Modern Folia/Paper API
+            player.getScheduler().execute(plugin, task, null, 0L);
+        } catch (NoSuchMethodError | Exception e) {
+            // Fallback to sync scheduler for non-Folia
             plugin.getServer().getScheduler().runTask(plugin, task);
         }
     }

@@ -60,9 +60,9 @@ public class ShopCommand implements CommandExecutor {
                 player.openInventory(shopGUI.createShopInventory());
             }
         } catch (Exception e) {
-            plugin.getLogger().warning("Error opening shop for " + player.getName());
+            plugin.getLogger().log(java.util.logging.Level.WARNING, "Error opening shop for " + player.getName(), e);
             player.sendMessage(ShopGUI.colorize(plugin.getConfig().getString("messages.prefix", "&e[LightShop]&r ") +
-                    "&cError opening shop!"));
+                    "&cError opening shop! Check console for details."));
         }
     }
 
@@ -71,21 +71,12 @@ public class ShopCommand implements CommandExecutor {
      */
     private void scheduleOpenShop(Player player) {
         try {
-            Object regionizedServer = player.getServer().getClass()
-                    .getMethod("getRegionizedServer")
-                    .invoke(player.getServer());
-
-            Object entityScheduler = regionizedServer.getClass()
-                    .getMethod("getEntityScheduler", org.bukkit.entity.Entity.class)
-                    .invoke(regionizedServer, player);
-
-            entityScheduler.getClass()
-                    .getMethod("execute", Runnable.class, Runnable.class, long.class)
-                    .invoke(entityScheduler, plugin, (Runnable) () -> 
-                            player.openInventory(shopGUI.createShopInventory()), 0L);
-        } catch (Exception e) {
-            // Fallback to sync
-            player.getServer().getScheduler().runTask(plugin, () ->
+            // Modern Folia/Paper API
+            player.getScheduler().execute(plugin, () -> 
+                player.openInventory(shopGUI.createShopInventory()), null, 0L);
+        } catch (NoSuchMethodError | Exception e) {
+            // Fallback for older versions or non-Folia environments
+            plugin.getServer().getScheduler().runTask(plugin, () ->
                     player.openInventory(shopGUI.createShopInventory()));
         }
     }
